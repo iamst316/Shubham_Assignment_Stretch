@@ -1,0 +1,53 @@
+.register{
+    border: 2px solid salmon;
+    padding: 2rem 1rem;
+    box-shadow: 2px 2px 20px rgb(255, 149, 149);
+    background-color: rgb(255, 216, 216);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+    margin: auto;
+    margin-top: 6rem;
+    column-gap: 1rem;
+}
+input::placeholder{
+    text-align: center;
+}
+.register *{
+    /* width: 80%; */
+    margin-bottom: .35rem;
+}
+
+.register div{
+    cursor: pointer;
+}
+
+option{
+    text-align: center;
+}
+.avatar{
+    display: flex;
+    justify-content: space-around;
+}
+
+.avatar img{
+    width: 3rem;
+    aspect-ratio: 1/1;
+    background-color: #ffffff90;
+    border-radius: 2rem;
+}
+
+.display{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.display div{
+    background-color: dodgerblue;
+    font-size: 10px;
+    text-align: center;
+    color: azure;
+    border-radius: .5rem;
+}

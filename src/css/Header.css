@@ -1,0 +1,10 @@
+header{
+    background-color: #14042c;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem .75rem;
+}
+
+.header-btns button{
+    margin-right: .5rem;
+}
