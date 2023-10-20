@@ -45,9 +45,16 @@ option{
 }
 
 .display div{
-    background-color: dodgerblue;
-    font-size: 10px;
-    text-align: center;
-    color: azure;
-    border-radius: .5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+    cursor: default;
+}
+
+.cancel{
+    margin-top: .25rem;
+    width: .75rem;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
 }

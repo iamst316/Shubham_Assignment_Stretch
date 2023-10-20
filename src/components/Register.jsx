@@ -40,7 +40,7 @@ export default function(){
                 const myCookieValue = Cookies.get("token");
 
                 localStorage.setItem("token", myCookieValue);
-                localStorage.setItem("user", response.user)
+                localStorage.setItem("user", JSON.stringify(response.data.user));
                 
                 navigate("/");
             })
@@ -49,9 +49,36 @@ export default function(){
             });
     }
 
-    // useEffect(()=>{
+    useEffect(()=>{
     //     console.log(regForm);
-    // },[regForm])
+    },[regForm])
+
+    useEffect(()=>{
+        setForm({
+            ...editForm,
+            techStack: techArr,
+            seeking: roleArr,
+            fieldOfInterest: interestArr
+        })
+    },[techArr])
+
+    useEffect(()=>{
+        setForm({
+            ...editForm,
+            techStack: techArr,
+            seeking: roleArr,
+            fieldOfInterest: interestArr
+        })
+    },[interestArr])
+
+    useEffect(()=>{
+        setForm({
+            ...editForm,
+            techStack: techArr,
+            seeking: roleArr,
+            fieldOfInterest: interestArr
+        })
+    },[roleArr])
 
     return (
         <div>

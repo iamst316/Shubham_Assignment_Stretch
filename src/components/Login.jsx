@@ -10,6 +10,7 @@ import Cookies from 'js-cookie';
 
 export default function(){
     const [loginForm, setForm] = useState({})
+    const [incorrect, setMessage] = useState("")
     const navigate = useNavigate();
 
     function Login(e){
@@ -21,11 +22,15 @@ export default function(){
 
                 const myCookieValue = Cookies.get("token");
                 console.log("res->",response);
-
-                localStorage.setItem("token", myCookieValue);
-                localStorage.setItem("user", JSON.stringify(response.data.user))
+                if (response.data.message=="Incorrect password or email"){
+                    setMessage(response.data.message)
+                }
+                else{
+                    localStorage.setItem("token", myCookieValue);
+                    localStorage.setItem("user", JSON.stringify(response.data.user))
+                    navigate("/");
+                }
                 
-                navigate("/");
             })
             .catch(error => {
                 console.error(error);
@@ -36,7 +41,7 @@ export default function(){
             <Header />
 
             <div className="login">
-                <Form.Control type="email" placeholder="Enter E-Mail" aria-label="E-Mail" aria-describedby="basic-addon1" onChange={(e)=>{setForm({
+                <Form.Control type="mail" placeholder="Enter E-Mail" aria-label="E-Mail" aria-describedby="basic-addon1" onChange={(e)=>{setForm({
                     ...loginForm,
                     email: e.target.value
                 })}} />
@@ -49,6 +54,7 @@ export default function(){
                 <Button onClick={(e)=> Login(e)} variant="outline-success">Login</Button>
                 
                 <div onClick={()=>navigate("/register")}>Register?</div>
+                <div className="message">{incorrect}</div>
             </div>
         </div>
     )

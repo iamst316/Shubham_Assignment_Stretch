@@ -7,12 +7,12 @@ import axios from 'axios';
 export default function(){
 
     const [auth, setAuth] = useState();
+    const [email, setEmail] = useState();
     const navigate = useNavigate();
 
     useEffect(()=>{
         if (localStorage.getItem("token")){
             setAuth(localStorage.getItem("token"));
-            // console.log(auth);    
         }
     },[])
 
@@ -23,13 +23,13 @@ export default function(){
     }
 
     function DeleteAccount(){
-        const email = localStorage.getItem("user").email;
-
-        axios.delete("http://localhost:4000/delete",{ email })
+        setEmail(JSON.parse(localStorage.getItem("user")).email);
+        axios.delete(`http://localhost:4000/delete/${email}`)
             .then(res => {
                 localStorage.removeItem("token");
                 localStorage.removeItem("user");
                 navigate("/login");
+                console.log(res)
             })
         
     }
