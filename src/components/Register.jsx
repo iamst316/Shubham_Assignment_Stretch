@@ -50,7 +50,7 @@ export default function(){
     }
 
     useEffect(()=>{
-    //     console.log(regForm);
+    //     //console.log(regForm);
     },[regForm])
 
     useEffect(()=>{
@@ -131,7 +131,7 @@ export default function(){
                     if (!interestArr.includes(e.target.value)) {
                         setInterest([ ...interestArr, e.target.value])
                     } 
-                    console.log(interestArr)
+                    //console.log(interestArr)
                 }}>
                     <option disabled>Add Fields Of Interest</option>
                     {interests.map((value)=>{

@@ -15,13 +15,13 @@ export default function(){
 
     function Login(e){
         e.preventDefault();
-        // console.log(loginForm);
+        // //console.log(loginForm);
 
         axios.post('http://localhost:4000/login', { loginForm }, { withCredentials: true })
             .then(response => {
 
                 const myCookieValue = Cookies.get("token");
-                console.log("res->",response);
+                //console.log("res->",response);
                 if (response.data.message=="Incorrect password or email"){
                     setMessage(response.data.message)
                 }

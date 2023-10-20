@@ -31,7 +31,7 @@ export default function(){
                 localStorage.removeItem("token");
                 localStorage.removeItem("user");
                 navigate("/login");
-                // console.log(req)
+                // //console.log(req)
             })
     }
     

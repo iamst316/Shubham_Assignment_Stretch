@@ -39,7 +39,7 @@ export default function(){
 
     function Update(e){
         e.preventDefault();
-        console.log("updating");
+        //console.log("updating");
         setForm({
             ...editForm,
             techStack: techArr,
@@ -49,11 +49,11 @@ export default function(){
             _id: JSON.parse(localStorage.getItem("user"))._id
         })
 
-        // console.log(editForm)
+        // //console.log(editForm)
 
         axios.patch('http://localhost:4000/edit', { editForm },{withCredentials: true})
             .then(response => {
-                // console.log(response)
+                // //console.log(response)
                 localStorage.setItem("user", JSON.stringify(response.data.user))
                 
                 navigate("/");
@@ -166,7 +166,7 @@ export default function(){
                     if (!interestArr.includes(e.target.value)) {
                         setInterest([ ...interestArr, e.target.value])
                     } 
-                    console.log(interestArr)
+                    //console.log(interestArr)
                 }}>
                     <option disabled>Add Fields Of Interest</option>
                     {interests.map((value)=>{

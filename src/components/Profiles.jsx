@@ -13,7 +13,7 @@ export default function(){
     function Search(word){
         axios.post('http://localhost:4000/search', { query: word } )
             .then(response => {
-                // console.log(response);
+                // //console.log(response);
                 setProfiles(response.data)
             })
             .catch(error => {
@@ -25,7 +25,7 @@ export default function(){
         axios.get("http://localhost:4000/all")
             .then((res)=>{
                 setProfiles(res.data);
-                // console.log(res.data);
+                // //console.log(res.data);
             })
     },[])
 
