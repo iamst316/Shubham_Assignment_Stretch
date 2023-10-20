@@ -34,7 +34,7 @@ export default function(){
             fieldOfInterest: interestArr
         })
 
-        axios.post('http://localhost:4000/signup', { regForm }, { withCredentials: true })
+        axios.post('https://bytive-server.onrender.com/signup', { regForm }, { withCredentials: true })
             .then(response => {
 
                 const myCookieValue = Cookies.get("token");

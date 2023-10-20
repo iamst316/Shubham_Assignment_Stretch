@@ -26,7 +26,7 @@ export default function(){
         // setEmail(JSON.parse(localStorage.getItem("user")).email);
         const mail = JSON.parse(localStorage.getItem("user")).email;
 
-        axios.delete(`http://localhost:4000/delete/${mail}`)
+        axios.delete(`https://bytive-server.onrender.com/delete/${mail}`)
             .then(res => {
                 localStorage.removeItem("token");
                 localStorage.removeItem("user");

@@ -11,7 +11,7 @@ export default function(){
     const [query, setQuery] = useState();
     
     function Search(word){
-        axios.post('http://localhost:4000/search', { query: word } )
+        axios.post('https://bytive-server.onrender.com/search', { query: word } )
             .then(response => {
                 // //console.log(response);
                 setProfiles(response.data)
@@ -22,7 +22,7 @@ export default function(){
     }
 
     useEffect(()=>{
-        axios.get("http://localhost:4000/all")
+        axios.get("https://bytive-server.onrender.com/all")
             .then((res)=>{
                 setProfiles(res.data);
                 // //console.log(res.data);

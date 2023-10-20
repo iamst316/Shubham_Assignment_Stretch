@@ -51,7 +51,7 @@ export default function(){
 
         // //console.log(editForm)
 
-        axios.patch('http://localhost:4000/edit', { editForm },{withCredentials: true})
+        axios.patch('https://bytive-server.onrender.com/edit', { editForm },{withCredentials: true})
             .then(response => {
                 // //console.log(response)
                 localStorage.setItem("user", JSON.stringify(response.data.user))
