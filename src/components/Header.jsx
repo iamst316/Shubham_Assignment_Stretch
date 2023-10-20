@@ -23,16 +23,18 @@ export default function(){
     }
 
     function DeleteAccount(){
-        setEmail(JSON.parse(localStorage.getItem("user")).email);
-        axios.delete(`http://localhost:4000/delete/${email}`)
+        // setEmail(JSON.parse(localStorage.getItem("user")).email);
+        const mail = JSON.parse(localStorage.getItem("user")).email;
+
+        axios.delete(`http://localhost:4000/delete/${mail}`)
             .then(res => {
                 localStorage.removeItem("token");
                 localStorage.removeItem("user");
                 navigate("/login");
-                console.log(res)
+                // console.log(req)
             })
-        
     }
+    
 
     return (
         <header>

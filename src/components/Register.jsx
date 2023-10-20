@@ -55,7 +55,7 @@ export default function(){
 
     useEffect(()=>{
         setForm({
-            ...editForm,
+            ...regForm,
             techStack: techArr,
             seeking: roleArr,
             fieldOfInterest: interestArr
@@ -64,7 +64,7 @@ export default function(){
 
     useEffect(()=>{
         setForm({
-            ...editForm,
+            ...regForm,
             techStack: techArr,
             seeking: roleArr,
             fieldOfInterest: interestArr
@@ -73,7 +73,7 @@ export default function(){
 
     useEffect(()=>{
         setForm({
-            ...editForm,
+            ...regForm,
             techStack: techArr,
             seeking: roleArr,
             fieldOfInterest: interestArr
